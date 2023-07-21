@@ -1,7 +1,3 @@
 export default function Home() {
-  return (
-   <div>
-     main
-   </div>
-  )
+  return <h1>Welcome to NextJS world</h1>;
 }

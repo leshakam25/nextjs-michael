@@ -1,11 +1,5 @@
-import React from 'react';
-
 const TheFooter = () => {
-    return (
-        <footer className="container">
-            Footer
-        </footer>
-    );
+  return <footer className="container">Created by &copy;MishaNep</footer>;
 };
 
-export default TheFooter;
+export { TheFooter };

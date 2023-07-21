@@ -1,9 +1,3 @@
-import React from 'react';
-
-const LoadingPosts = () => {
-    return (
-        <h2>Loading...</h2>
-    );
-};
-
-export default LoadingPosts;
+export default function LoadingPosts() {
+  return <h1>Loading...</h1>;
+}

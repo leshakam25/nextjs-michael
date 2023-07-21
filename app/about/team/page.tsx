@@ -1,11 +1,3 @@
-import React from 'react';
-
-const Team = () => {
-    return (
-        <div>
-            team
-        </div>
-    );
-};
-
-export default Team;
+export default function Team() {
+  return <h1>Team page</h1>;
+}
