@@ -1,35 +1,39 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {usePathname} from "next/navigation";
+import {useSession} from "next-auth/react";
 
 type NavLink = {
-  label: string;
-  href: string;
+    label: string;
+    href: string;
 };
 type Props = {
-  navLinks: NavLink[];
+    navLinks: NavLink[];
 };
 
-const Navigation = ({ navLinks }: Props) => {
-  const pathname = usePathname();
+const Navigation = ({navLinks}: Props) => {
+    const pathname = usePathname();
+    const session = useSession();
 
-  return (
-    <>
-      {navLinks.map((link) => {
-        const isActive = pathname === link.href;
+    console.log(session)
 
-        return (
-          <Link
-            key={link.label}
-            href={link.href}
-            className={isActive ? "active" : ""}
-          >
-            {link.label}
-          </Link>
-        );
-      })}
-    </>
-  );
+    return (
+        <>
+            {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+
+                return (
+                    <Link
+                        key={link.label}
+                        href={link.href}
+                        className={isActive ? "active" : ""}
+                    >
+                        {link.label}
+                    </Link>
+                );
+            })}
+        </>
+    );
 };
 
-export { Navigation };
+export {Navigation};
